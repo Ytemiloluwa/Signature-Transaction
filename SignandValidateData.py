@@ -13,7 +13,8 @@ sk = SigningKey.generate(curve=SECP256k1)
 vk = sk.verifying_key
 
 # signing a message
-signature = sk.sign(b"Not your keys, not your coins")
+signature = sk.sign(b"Not your keys, not your coins!")
 
+assert vk.verify(signature, b"Not your keys, not your coins!")
 
 
