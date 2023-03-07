@@ -8,3 +8,7 @@
 from ecdsa import SigningKey, SECP256k1
 
 sk = SigningKey.generate(curve=SECP256k1)
+
+# signing a message
+signature = sk.sign(b"Not your keys, not your coins")
+
