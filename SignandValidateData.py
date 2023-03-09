@@ -8,13 +8,16 @@
 from ecdsa import SigningKey, SECP256k1
 
 sk = SigningKey.generate(curve=SECP256k1)
+print(sk)
 
 # public or verifying key
 vk = sk.verifying_key
+print(vk)
 
 # signing a message
 signature = sk.sign(b"Not your keys, not your coins!")
+print(signature)
 
-assert vk.verify(signature, b"Not your keys, not your coins!")
+print(vk.verify(signature, b"Not your keys, not your coins!"))
 
 
